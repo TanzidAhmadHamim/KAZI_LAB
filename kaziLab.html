@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>কাজী ল্যাব - ডায়াগনস্টিক এন্ড কনসালটেশন সেন্টার | Kazi Lab</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Hind Siliguri & Noto Sans Bengali for crisp Bengali typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for medical icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Hind Siliguri"', '"Noto Sans Bengali"', 'sans-serif'],
+                    },
+                    colors: {
+                        kazi: {
+                            green: '#1b7a3d',
+                            darkGreen: '#13592c',
+                            lightGreen: '#eef8f1',
+                            softGreen: '#d6eedd',
+                            red: '#a82020',
+                            darkRed: '#851717',
+                            lightRed: '#fdf2f2'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-kazi-green selection:text-white pb-16 md:pb-0">
+
+    <!-- Top Info Bar -->
+    <div class="bg-kazi-darkGreen text-white text-xs sm:text-sm py-2 px-4 border-b border-emerald-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-4">
+            <div class="flex items-center gap-2 text-center sm:text-left">
+                <i class="fa-solid fa-location-dot text-emerald-300"></i>
+                <span>কাজী নূর ভবন (২য় তলা), কাজির হাট, মোহরা, চান্দগাঁও, চট্টগ্রাম।</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:01823765665" class="hover:text-emerald-200 transition flex items-center gap-1.5 font-medium">
+                    <i class="fa-solid fa-phone-volume text-emerald-300"></i>
+                    <span>সিরিয়াল: ০১৮২৩-৭৬৫৬৬৫</span>
+                </a>
+                <a href="mailto:kazilabdiagnosticcentre@gmail.com" class="hidden md:flex hover:text-emerald-200 transition items-center gap-1.5">
+                    <i class="fa-solid fa-envelope text-emerald-300"></i>
+                    <span>kazilabdiagnosticcentre@gmail.com</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Sticky Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo & Name -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <!-- Custom Vector Logo inspired by brochure emblem -->
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-kazi-green to-kazi-darkGreen flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="8" r="3.5" fill="currentColor"/>
+                            <path d="M12 21C14.5 16 18 14 22 14C25 14 27 16 28 19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M18 15L14 29L22 24L26 32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M27 25C27 23.5 28.5 22.5 29.8 23.5C31 22.5 32.5 23.5 32.5 25C32.5 27.2 29.8 29 29.8 29C29.8 29 27 27.2 27 25Z" fill="#fca5a5"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl sm:text-3xl font-bold text-kazi-green tracking-tight leading-none">কাজী ল্যাব</span>
+                            <span class="hidden sm:inline-block text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-kazi-lightGreen text-kazi-green border border-kazi-softGreen">Kazi Lab</span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-medium text-slate-600 mt-0.5">ডায়াগনস্টিক এন্ড কনসালটেশন সেন্টার</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-7 font-medium text-slate-700">
+                    <a href="#home" class="hover:text-kazi-green transition py-2">হোম</a>
+                    <a href="#doctors" class="hover:text-kazi-green transition py-2">বিশেষজ্ঞ ডাক্তার</a>
+                    <a href="#services" class="hover:text-kazi-green transition py-2">সেবাসমূহ</a>
+                    <a href="#appointment" class="hover:text-kazi-green transition py-2">অ্যাপয়েন্টমেন্ট</a>
+                    <a href="#contact" class="hover:text-kazi-green transition py-2">যোগাযোগ</a>
+                </nav>
+
+                <!-- Header Action Button & Mobile Menu Toggle -->
+                <div class="flex items-center gap-3">
+                    <a href="#appointment" class="hidden sm:inline-flex items-center gap-2 bg-kazi-red hover:bg-kazi-darkRed text-white font-semibold px-5 py-2.5 rounded-xl shadow-sm hover:shadow transition">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span>অনলাইন সিরিয়াল</span>
+                    </a>
+                    <button id="mobile-menu-btn" aria-label="মেনু খুলুন" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-5 shadow-lg">
+            <div class="flex flex-col space-y-2 font-medium text-slate-700">
+                <a href="#home" class="mobile-nav-link px-3 py-2.5 rounded-xl hover:bg-kazi-lightGreen hover:text-kazi-green transition">হোম</a>
+                <a href="#doctors" class="mobile-nav-link px-3 py-2.5 rounded-xl hover:bg-kazi-lightGreen hover:text-kazi-green transition">বিশেষজ্ঞ ডাক্তার</a>
+                <a href="#services" class="mobile-nav-link px-3 py-2.5 rounded-xl hover:bg-kazi-lightGreen hover:text-kazi-green transition">সেবাসমূহ</a>
+                <a href="#appointment" class="mobile-nav-link px-3 py-2.5 rounded-xl hover:bg-kazi-lightGreen hover:text-kazi-green transition">অ্যাপয়েন্টমেন্ট</a>
+                <a href="#contact" class="mobile-nav-link px-3 py-2.5 rounded-xl hover:bg-kazi-lightGreen hover:text-kazi-green transition">যোগাযোগ</a>
+                <div class="pt-2">
+                    <a href="tel:01823765665" class="w-full flex items-center justify-center gap-2 bg-kazi-green text-white font-semibold py-3 rounded-xl shadow">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>কল করুন: ০১৮২৩-৭৬৫৬৬৫</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden bg-gradient-to-br from-kazi-lightGreen via-white to-emerald-50/70 pt-10 pb-16 sm:pt-16 sm:pb-24 border-b border-emerald-100">
+        <!-- Decorative Background Blobs -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-kazi-green/5 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-kazi-red/5 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Left Hero Content -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-kazi-softGreen shadow-sm text-kazi-green font-semibold text-sm mb-5">
+                        <span class="w-2 h-2 rounded-full bg-kazi-green animate-pulse"></span>
+                        <span>(সর্বাধুনিক প্রযুক্তি সমৃদ্ধ রোগ নিরুপনী কেন্দ্র)</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-3">
+                        <span class="text-kazi-green">কাজী ল্যাব</span>
+                    </h1>
+                    <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-700 mb-5">
+                        ডায়াগনস্টিক এন্ড কনসালটেশন সেন্টার
+                    </h2>
+
+                    <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 mb-6 leading-relaxed">
+                        অভিজ্ঞ বিশেষজ্ঞ ডাক্তারের পরামর্শ এবং অত্যাধুনিক ডিজিটাল ল্যাবরেটরি পরীক্ষার নির্ভরযোগ্য প্রতিষ্ঠান। সঠিক রোগ নির্ণয় ও আন্তরিক সেবায় আমরা সর্বদা আপনার পাশে।
+                    </p>
+
+                    <!-- Address Badge -->
+                    <div class="inline-flex items-start sm:items-center gap-2.5 bg-white/90 border border-slate-200 rounded-2xl px-4 py-3 text-slate-700 text-sm sm:text-base mb-8 shadow-sm text-left">
+                        <i class="fa-solid fa-location-dot text-kazi-red text-lg mt-0.5 sm:mt-0"></i>
+                        <span><strong>ঠিকানা:</strong> কাজী নূর ভবন (২য় তলা), কাজির হাট, মোহরা, চান্দগাঁও, চট্টগ্রাম।</span>
+                    </div>
+
+                    <!-- Primary CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="tel:01823765665" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-kazi-red hover:bg-kazi-darkRed text-white font-bold text-base sm:text-lg px-7 py-4 rounded-2xl shadow-lg shadow-red-900/15 hover:shadow-xl transition transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-phone-volume animate-bounce"></i>
+                            <span>সিরিয়ালের জন্য কল করুন: ০১৮২৩-৭৬৫৬৬৫</span>
+                        </a>
+                        <a href="#appointment" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-kazi-green hover:bg-kazi-darkGreen text-white font-semibold text-base sm:text-lg px-7 py-4 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5">
+                            <i class="fa-regular fa-calendar-plus"></i>
+                            <span>অনলাইন সিরিয়াল নিন</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Hero Highlights Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-emerald-100 relative">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-kazi-red">তাৎক্ষণিক তথ্য</span>
+                                <h3 class="text-xl font-bold text-slate-800">কেন কাজী ল্যাব সেরা?</h3>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-kazi-lightGreen text-kazi-green flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-xl bg-emerald-50 text-kazi-green flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-user-doctor"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">৫ জন বিশেষজ্ঞ ডাক্তারের চেম্বার</h4>
+                                    <p class="text-sm text-slate-600">মেডিসিন, ডায়াবেটিস, কিডনী, গাইনী, শিশু, চর্ম ও গ্যাস্ট্রোলিভার বিশেষজ্ঞ।</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-xl bg-red-50 text-kazi-red flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-microscope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">সর্বাধুনিক ডিজিটাল ডায়াগনস্টিক</h4>
+                                    <p class="text-sm text-slate-600">4D কালার আল্ট্রাসনোগ্রাফী, ডিজিটাল এক্স-রে, ইকোকার্ডিওগ্রাফী ও অটো-এনালাইজার ল্যাব।</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-xl bg-emerald-50 text-kazi-green flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-passport"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">বিদেশগামী ও মাস্টার হেলথ চেক-আপ</h4>
+                                    <p class="text-sm text-slate-600">টিকাদান কেন্দ্র এবং সম্পূর্ণ স্বাস্থ্য পরীক্ষার নির্ভরযোগ্য ব্যবস্থা।</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between text-sm">
+                            <span class="text-slate-500">সহজ সিরিয়াল বুকিং:</span>
+                            <a href="#doctors" class="font-bold text-kazi-green hover:underline flex items-center gap-1">
+                                <span>ডাক্তারদের তালিকা দেখুন</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: বিশেষজ্ঞ ডাক্তারের চেম্বার (Specialist Doctors' Chambers) -->
+    <section id="doctors" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <span class="inline-block bg-kazi-red text-white font-semibold px-5 py-1.5 rounded-full text-sm sm:text-base shadow-sm mb-3">
+                বিশেষজ্ঞ ডাক্তারের চেম্বারঃ
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">আমাদের অভিজ্ঞ বিশেষজ্ঞ চিকিৎসকবৃন্দ</h2>
+            <p class="text-slate-600 text-base sm:text-lg">আপনার প্রয়োজনীয় বিশেষজ্ঞ ডাক্তার খুঁজে বের করুন এবং সরাসরি চেম্বারের সিরিয়াল বুক করুন।</p>
+        </div>
+
+        <!-- Interactive Filter & Search Bar for Doctors -->
+        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 mb-8 flex flex-col md:flex-row gap-4 justify-between items-center">
+            <div class="relative w-full md:w-96">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <input type="text" id="doctor-search" placeholder="ডাক্তারের নাম বা রোগের ধরন লিখুন (যেমন: মেডিসিন, গাইনী)..." 
+                    class="w-full pl-11 pr-4 py-2.5 rounded-xl border border-slate-200 focus:border-kazi-green focus:ring-2 focus:ring-kazi-green/20 outline-none text-sm sm:text-base">
+            </div>
+            <div class="flex flex-wrap items-center gap-2 w-full md:w-auto justify-center md:justify-end" id="doctor-filters">
+                <button data-filter="all" class="filter-btn active px-3.5 py-2 rounded-xl text-sm font-semibold bg-kazi-green text-white transition">সকল ডাক্তার (৫)</button>
+                <button data-filter="মেডিসিন" class="filter-btn px-3.5 py-2 rounded-xl text-sm font-medium bg-slate-100 text-slate-700 hover:bg-kazi-lightGreen hover:text-kazi-green transition">মেডিসিন ও ডায়াবেটিস</button>
+                <button data-filter="গাইনী" class="filter-btn px-3.5 py-2 rounded-xl text-sm font-medium bg-slate-100 text-slate-700 hover:bg-kazi-lightGreen hover:text-kazi-green transition">গাইনী ও শিশু</button>
+                <button data-filter="চর্ম" class="filter-btn px-3.5 py-2 rounded-xl text-sm font-medium bg-slate-100 text-slate-700 hover:bg-kazi-lightGreen hover:text-kazi-green transition">চর্ম ও যৌন</button>
+            </div>
+        </div>
+
+        <!-- Doctors Grid Container -->
+        <div id="doctors-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+            <!-- Doctor cards are dynamically rendered by JS to ensure clean state & easy booking integration -->
+        </div>
+
+        <!-- Empty Search State -->
+        <div id="no-doctor-msg" class="hidden text-center py-12 bg-white rounded-3xl border border-slate-200">
+            <i class="fa-solid fa-user-doctor text-4xl text-slate-300 mb-3"></i>
+            <p class="text-lg font-semibold text-slate-700">দুঃখিত, আপনার অনুসন্ধানের সাথে মিলে এমন কোনো ডাক্তার পাওয়া যায়নি।</p>
+            <button onclick="resetDoctorFilters()" class="mt-3 text-kazi-green font-semibold hover:underline">সকল ডাক্তার দেখুন</button>
+        </div>
+    </section>
+
+    <!-- Section 2: আমাদের সেবা সমূহ (Our Services) -->
+    <section id="services" class="py-16 sm:py-20 bg-gradient-to-b from-kazi-lightGreen/70 to-white border-y border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="inline-block bg-kazi-red text-white font-semibold px-5 py-1.5 rounded-full text-sm sm:text-base shadow-sm mb-3">
+                    আমাদের সেবা সমূহঃ
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">সর্বাধুনিক ডায়াগনস্টিক ও প্যাথলজি সেবা</h2>
+                <p class="text-slate-600 text-base sm:text-lg">নির্ভুল রিপোর্ট এবং আধুনিক প্রযুক্তির সমন্বয়ে আমাদের সকল পরীক্ষাসমূহ।</p>
+            </div>
+
+            <!-- Quick Service Search -->
+            <div class="max-w-md mx-auto mb-10 relative">
+                <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <input type="text" id="service-search" placeholder="সেবা বা পরীক্ষার নাম খুঁজুন (যেমন: এক্স-রে, আল্ট্রাসনোগ্রাফী)..." 
+                    class="w-full pl-11 pr-4 py-3 rounded-2xl bg-white border border-slate-200 shadow-sm focus:border-kazi-green focus:ring-2 focus:ring-kazi-green/20 outline-none text-sm sm:text-base">
+            </div>
+
+            <!-- Services Grid -->
+            <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
+                <!-- Services populated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: অনলাইন সিরিয়াল / অ্যাপয়েন্টমেন্ট ফর্ম (Interactive Appointment Booking) -->
+    <section id="appointment" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12">
+                <!-- Left Info Panel -->
+                <div class="lg:col-span-5 bg-gradient-to-br from-kazi-green to-kazi-darkGreen text-white p-8 sm:p-10 flex flex-col justify-between">
+                    <div>
+                        <span class="inline-block px-3.5 py-1 rounded-full bg-white/15 text-emerald-100 text-xs font-semibold uppercase tracking-wider mb-4">
+                            সহজ অ্যাপয়েন্টমেন্ট
+                        </span>
+                        <h2 class="text-2xl sm:text-3xl font-bold mb-4 leading-snug">অনলাইনে ডাক্তারের সিরিয়াল বুক করুন</h2>
+                        <p class="text-emerald-100 text-sm sm:text-base leading-relaxed mb-8">
+                            ঘরে বসেই আপনার পছন্দের বিশেষজ্ঞ ডাক্তারের চেম্বারের জন্য অগ্রিম সিরিয়াল নিন। ফর্মটি পূরণ করলে আমাদের প্রতিনিধি দ্রুত আপনার সাথে যোগাযোগ করবেন।
+                        </p>
+
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-phone-volume text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-emerald-200">সরাসরি হটলাইন নম্বর</p>
+                                    <a href="tel:01823765665" class="text-xl font-bold hover:underline">০১৮২৩-৭৬৫৬৬৫</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-emerald-200">চেম্বারের ঠিকানা</p>
+                                    <p class="font-medium text-sm sm:text-base">কাজী নূর ভবন (২য় তলা), কাজির হাট, মোহরা, চান্দগাঁও, চট্টগ্রাম।</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-envelope text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-emerald-200">ই-মেইল</p>
+                                    <a href="mailto:kazilabdiagnosticcentre@gmail.com" class="text-sm font-medium break-all hover:underline">kazilabdiagnosticcentre@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 pt-6 border-t border-white/15 text-xs text-emerald-200">
+                        * জরুরি প্রয়োজনে সরাসরি ০১৮২৩-৭৬৫৬৬৫ নম্বরে কল করার জন্য অনুরোধ করা হলো।
+                    </div>
+                </div>
+
+                <!-- Right Interactive Booking Form / Confirmation Card -->
+                <div class="lg:col-span-7 p-6 sm:p-10">
+                    <!-- Form View -->
+                    <div id="booking-form-container">
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                            <i class="fa-regular fa-clipboard text-kazi-green"></i>
+                            <span>রোগীর তথ্য দিন</span>
+                        </h3>
+
+                        <!-- Inline Validation Alert Box (No browser alert() used) -->
+                        <div id="form-error-box" class="hidden mb-5 p-4 rounded-2xl bg-kazi-lightRed border border-red-200 text-kazi-red text-sm flex items-center gap-3">
+                            <i class="fa-solid fa-circle-exclamation text-lg"></i>
+                            <span id="form-error-text">অনুগ্রহ করে সকল আবশ্যক তথ্য সঠিকভাবে পূরণ করুন।</span>
+                        </div>
+
+                        <form id="appointment-form" class="space-y-5" novalidate>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <!-- Patient Name -->
+                                <div>
+                                    <label for="patient-name" class="block text-sm font-semibold text-slate-700 mb-1.5">
+                                        রোগীর নাম <span class="text-kazi-red">*</span>
+                                    </label>
+                                    <input type="text" id="patient-name" required placeholder="রোগীর পূর্ণ নাম লিখুন"
+                                        class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-kazi-green focus:ring-2 focus:ring-kazi-green/20 outline-none transition">
+                                </div>
+
+                                <!-- Phone Number -->
+                                <div>
+                                    <label for="patient-phone" class="block text-sm font-semibold text-slate-700 mb-1.5">
+                                        মোবাইল নম্বর <span class="text-kazi-red">*</span>
+                                    </label>
+                                    <input type="tel" id="patient-phone" required placeholder="০১XXXXXXXXX"
+                                        class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-kazi-green focus:ring-2 focus:ring-kazi-green/20 outline-none transition">
+                                </div>
+                            </div>
+
+                            <!-- Select Doctor -->
+                            <div>
+                                <label for="doctor-select" class="block text-sm font-semibold text-slate-700 mb-1.5">
+                                    ডাক্তার নির্বাচন করুন <span class="text-kazi-red">*</span>
+                                </label>
+                                <select id="doctor-select" required
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white focus:border-kazi-green focus:ring-2 focus:ring-kazi-green/20 outline-none transition">
+                                    <option value="">-- বিশেষজ্ঞ ডাক্তার নির্বাচন করুন --</option>
+                                    <option value="ডাঃ শওকত আজাদ (প্রতি রবি, মঙ্গল ও শুক্রবার - সন্ধ্যা ৬টা থেকে রাত ৮টা)">ডাঃ শওকত আজাদ — মেডিসিন, ডায়াবেটিস ও কিডনী বিশেষজ্ঞ (রবি, মঙ্গল, শুক্র: সন্ধ্যা ৬টা-রাত ৮টা)</option>
+                                    <option value="ডাঃ জাকিয়া সুলতানা (প্রতি রবি, মঙ্গল ও শুক্রবার - সন্ধ্যা ৭.৩০ থেকে রাত ৯.৩০)">ডাঃ জাকিয়া সুলতানা — মহিলা, গাইনী, শিশু ও ডায়াবেটিস বিশেষজ্ঞ (রবি, মঙ্গল, শুক্র: সন্ধ্যা ৭.৩০-রাত ৯.৩০)</option>
+                                    <option value="ডাঃ আবু রাশেদ মোঃ শের আখতার (প্রতি সোমবার - বিকাল ৩.৩০ থেকে ৫.৩০টা)">ডাঃ আবু রাশেদ মোঃ শের আখতার — চর্ম, যৌন, এলার্জি, কুষ্ঠ বিশেষজ্ঞ (সোমবার: বিকাল ৩.৩০-৫.৩০টা)</option>
+                                    <option value="ডাঃ মাহবুবা জুলায়খা (শনিবার, সোমবার ও বৃহস্পতিবার - সন্ধ্যা ৬ থেকে রাত ৮টা)">ডাঃ মাহবুবা জুলায়খা — মেডিসিন, শিশু ও গাইনী রোগে অভিজ্ঞ (শনি, সোম, বৃহঃ: সন্ধ্যা ৬-রাত ৮টা)</option>
+                                    <option value="ডাঃ জাহেদুল আলম তালুকদার (শনি, সোম, বুধ ও বৃহস্পতিবার - সন্ধ্যা ৭টা-রাত ৯টা)">ডাঃ জাহেদুল আলম তালুকদার — মেডিসিন, গ্যাস্ট্রোলিভার, কিডনী, ডায়াবেটিস (শনি, সোম, বুধ, বৃহঃ: সন্ধ্যা ৭টা-রাত ৯টা)</option>
+                                </select>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <!-- Preferred Date -->
+                                <div>
+                                    <label for="appointment-date" class="block text-sm font-semibold text-slate-700 mb-1.5">
+                                        সম্ভাব্য তারিখ <span class="text-kazi-red">*</span>
+                                    </label>
+                                    <input type="date" id="appointment-date" required
+                                        class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-kazi-green focus:ring-2 focus:ring-kazi-green/20 outline-none transition">
+                                </div>
+
+                                <!-- Age / Notes -->
+                                <div>
+                                    <label for="patient-notes" class="block text-sm font-semibold text-slate-700 mb-1.5">
+                                        বয়স / সমস্যা (ঐচ্ছিক)
+                                    </label>
+                                    <input type="text" id="patient-notes" placeholder="যেমন: বয়স ৩৫, ডায়াবেটিস চেকআপ"
+                                        class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-kazi-green focus:ring-2 focus:ring-kazi-green/20 outline-none transition">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full bg-kazi-green hover:bg-kazi-darkGreen text-white font-bold text-lg py-3.5 px-6 rounded-xl shadow-md hover:shadow-lg transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-check-circle"></i>
+                                <span>সিরিয়াল নিশ্চিত করুন</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Confirmation Card (Hidden initially) -->
+                    <div id="booking-confirmation" class="hidden">
+                        <div class="bg-kazi-lightGreen border border-kazi-softGreen rounded-2xl p-6 sm:p-8 text-center">
+                            <div class="w-16 h-16 rounded-full bg-kazi-green text-white flex items-center justify-center text-3xl mx-auto mb-4 shadow-md">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-kazi-darkGreen mb-2">আপনার সিরিয়াল অনুরোধ গৃহীত হয়েছে!</h3>
+                            <p class="text-slate-600 text-sm sm:text-base mb-6">নিচে আপনার বুকিংয়ের তথ্য সংরক্ষিত হয়েছে। দ্রুত কনফার্মেশনের জন্য সরাসরি কল বা হোয়াটসঅ্যাপ করতে পারেন।</p>
+
+                            <div class="bg-white rounded-2xl p-5 text-left border border-emerald-100 shadow-sm space-y-2.5 text-sm sm:text-base mb-6">
+                                <div class="flex justify-between border-b border-slate-100 pb-2">
+                                    <span class="text-slate-500">রোগীর নাম:</span>
+                                    <span id="conf-name" class="font-bold text-slate-800"></span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-100 pb-2">
+                                    <span class="text-slate-500">মোবাইল নম্বর:</span>
+                                    <span id="conf-phone" class="font-bold text-slate-800"></span>
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:justify-between border-b border-slate-100 pb-2 gap-1">
+                                    <span class="text-slate-500 shrink-0">নির্বাচিত ডাক্তার:</span>
+                                    <span id="conf-doctor" class="font-bold text-kazi-green sm:text-right"></span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-100 pb-2">
+                                    <span class="text-slate-500">সম্ভাব্য তারিখ:</span>
+                                    <span id="conf-date" class="font-bold text-slate-800"></span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500">বয়স / বিবরণ:</span>
+                                    <span id="conf-notes" class="font-medium text-slate-700"></span>
+                                </div>
+                            </div>
+
+                            <!-- Direct Action Buttons -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <a href="tel:01823765665" class="inline-flex items-center justify-center gap-2 bg-kazi-red hover:bg-kazi-darkRed text-white font-semibold py-3 px-4 rounded-xl transition text-sm">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <span>সরাসরি কল করুন</span>
+                                </a>
+                                <a id="whatsapp-send-btn" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-xl transition text-sm">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                                    <span>WhatsApp-এ পাঠান</span>
+                                </a>
+                                <a id="email-send-btn" href="#" class="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-semibold py-3 px-4 rounded-xl transition text-sm">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span>ই-মেইল করুন</span>
+                                </a>
+                            </div>
+
+                            <button type="button" id="new-booking-btn" class="mt-6 text-sm font-semibold text-kazi-green hover:underline">
+                                + নতুন আরেকটি সিরিয়াল বুক করুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: যোগাযোগ ও ঠিকানা (Contact & Location Footer) -->
+    <footer id="contact" class="bg-kazi-darkGreen text-white pt-14 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-10 border-b border-emerald-800">
+                <!-- Brand Column -->
+                <div class="lg:col-span-5">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-11 h-11 rounded-2xl bg-white text-kazi-green flex items-center justify-center font-bold text-xl shadow">
+                            <i class="fa-solid fa-staff-snake"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold leading-none">কাজী ল্যাব</h3>
+                            <p class="text-emerald-200 text-sm mt-1">ডায়াগনস্টিক এন্ড কনসালটেশন সেন্টার</p>
+                        </div>
+                    </div>
+                    <p class="text-emerald-100/90 text-sm sm:text-base mb-5 leading-relaxed">
+                        (সর্বাধুনিক প্রযুক্তি সমৃদ্ধ রোগ নিরুপনী কেন্দ্র) — অভিজ্ঞ বিশেষজ্ঞ চিকিৎসক এবং আধুনিক প্যাথলজি ও ইমেজিং সেবার বিশ্বস্ত প্রতিষ্ঠান।
+                    </p>
+                    <div class="inline-flex items-center gap-2 bg-kazi-red text-white px-4 py-2 rounded-xl font-bold text-base shadow">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <a href="tel:01823765665">সিরিয়ালের জন্য: ০১৮২৩-৭৬৫৬৬৫</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="lg:col-span-3">
+                    <h4 class="text-lg font-bold mb-4 text-white">দ্রুত লিংক</h4>
+                    <ul class="space-y-2.5 text-emerald-100 text-sm sm:text-base">
+                        <li><a href="#home" class="hover:text-white transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-emerald-400"></i> হোম</a></li>
+                        <li><a href="#doctors" class="hover:text-white transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-emerald-400"></i> বিশেষজ্ঞ ডাক্তারের চেম্বার</a></li>
+                        <li><a href="#services" class="hover:text-white transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-emerald-400"></i> আমাদের সেবা সমূহ</a></li>
+                        <li><a href="#appointment" class="hover:text-white transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-emerald-400"></i> অনলাইন সিরিয়াল ফর্ম</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="lg:col-span-4">
+                    <h4 class="text-lg font-bold mb-4 text-white">যোগাযোগ ও ঠিকানা</h4>
+                    <ul class="space-y-4 text-emerald-100 text-sm sm:text-base">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-emerald-300 mt-1 text-lg"></i>
+                            <span><strong>ঠিকানা:</strong> কাজী নূর ভবন (২য় তলা), কাজির হাট, মোহরা, চান্দগাঁও, চট্টগ্রাম।</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-emerald-300 text-lg"></i>
+                            <span><strong>সিরিয়ালের জন্য:</strong> <a href="tel:01823765665" class="font-bold text-white hover:underline">০১৮২৩-৭৬৫৬৬৫</a></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope text-emerald-300 mt-1 text-lg"></i>
+                            <span><strong>E-mail:</strong> <a href="mailto:kazilabdiagnosticcentre@gmail.com" class="hover:underline break-all">kazilabdiagnosticcentre@gmail.com</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-emerald-200/80 gap-2 text-center">
+                <p>&copy; ২০২৬ কাজী ল্যাব - ডায়াগনস্টিক এন্ড কনসালটেশন সেন্টার। সর্বস্বত্ব সংরক্ষিত।</p>
+                <p>কাজির হাট, মোহরা, চান্দগাঁও, চট্টগ্রাম।</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile Bottom Call & Serial Bar -->
+    <div class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-white border-t border-slate-200 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] px-3 py-2.5 flex items-center gap-2.5">
+        <a href="tel:01823765665" class="flex-1 bg-kazi-red active:bg-kazi-darkRed text-white font-bold py-3 px-3 rounded-xl flex items-center justify-center gap-2 text-sm shadow">
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>কল: ০১৮২৩-৭৬৫৬৬৫</span>
+        </a>
+        <a href="#appointment" class="flex-1 bg-kazi-green active:bg-kazi-darkGreen text-white font-bold py-3 px-3 rounded-xl flex items-center justify-center gap-2 text-sm shadow">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span>অনলাইন সিরিয়াল</span>
+        </a>
+    </div>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Exact Specialist Doctors Data from Brochure
+        const doctorsData = [
+            {
+                id: 1,
+                name: "ডাঃ শওকত আজাদ",
+                specialty: "মেডিসিন, ডায়াবেটিস ও কিডনী বিশেষজ্ঞ",
+                qualifications: "এম.বি.বি.এস, এম.ডি (নেফ্রলজী), সি.সি.ডি (ডায়াবেটিস), এফ.এ.এস.এন (ইউ.এস.এ), এম.সি.পি (ইউ.এস.এ)",
+                hospital: "চট্টগ্রাম মেডিকেল কলেজ হাসপাতাল",
+                schedule: "প্রতি রবি, মঙ্গল ও শুক্রবার (সন্ধ্যা ৬টা থেকে রাত ৮টা পর্যন্ত)",
+                selectValue: "ডাঃ শওকত আজাদ (প্রতি রবি, মঙ্গল ও শুক্রবার - সন্ধ্যা ৬টা থেকে রাত ৮টা)"
+            },
+            {
+                id: 2,
+                name: "ডাঃ জাকিয়া সুলতানা",
+                specialty: "মহিলা, গাইনী, শিশু ও ডায়াবেটিস রোগ বিশেষজ্ঞ",
+                qualifications: "এম.বি.বি.এস (সি.ইউ), এম.ডি, সি.সি.ডি (ডায়াবেটিস) বারডেম, সি.এম.ইউ",
+                hospital: "সহকারী অধ্যাপক, সাউদার্ন মেডিকেল কলেজ হাসপাতাল; এক্স-চট্টগ্রাম মা ও শিশু হাসপাতাল মেডিকেল কলেজ",
+                schedule: "প্রতি রবি, মঙ্গল ও শুক্রবার সন্ধ্যা ৭.৩০ থেকে রাত ৯.৩০ পর্যন্ত",
+                selectValue: "ডাঃ জাকিয়া সুলতানা (প্রতি রবি, মঙ্গল ও শুক্রবার - সন্ধ্যা ৭.৩০ থেকে রাত ৯.৩০)"
+            },
+            {
+                id: 3,
+                name: "ডাঃ আবু রাশেদ মোঃ শের আখতার",
+                specialty: "চর্ম, যৌন, এলার্জি, কুষ্ঠ রোগ বিশেষজ্ঞ",
+                qualifications: "এম.বি.বি.এস, ডি.ডি.ভি, এম.ডি.কোর্স (চর্ম ও যৌন)",
+                hospital: "চট্টগ্রাম মেডিকেল কলেজ ও হাসপাতাল।",
+                schedule: "প্রতি সোমবার বিকাল ৩.৩০ থেকে ৫.৩০টা পর্যন্ত।",
+                selectValue: "ডাঃ আবু রাশেদ মোঃ শের আখতার (প্রতি সোমবার - বিকাল ৩.৩০ থেকে ৫.৩০টা)"
+            },
+            {
+                id: 4,
+                name: "ডাঃ মাহবুবা জুলায়খা",
+                specialty: "মেডিসিন, শিশু ও গাইনী রোগে অভিজ্ঞ",
+                qualifications: "এম.বি.বি.এস, এফ.সি.পি.এস (মেডিসিন)-শেষ পর্ব",
+                hospital: "চট্টগ্রাম মেডিকেল কলেজ ও হাসপাতাল। প্রাক্তন অ্যাসিস্ট্যান্ট রেজিস্ট্রার, মেরিন সিটি মেডিকেল কলেজ হাসপাতাল, চট্টগ্রাম।",
+                schedule: "শনিবার, সোমবার ও বৃহস্পতিবার সন্ধ্যা ৬ থেকে রাত ৮টা",
+                selectValue: "ডাঃ মাহবুবা জুলায়খা (শনিবার, সোমবার ও বৃহস্পতিবার - সন্ধ্যা ৬ থেকে রাত ৮টা)"
+            },
+            {
+                id: 5,
+                name: "ডাঃ জাহেদুল আলম তালুকদার",
+                specialty: "মেডিসিন, গ্যাস্ট্রোলিভার, কিডনী, ডায়াবেটিস, বাতব্যথা, চর্ম, শিশু, ডায়রিয়া ও আমাশয় রোগে অভিজ্ঞ",
+                qualifications: "এম.বি.বি.এস (সি.ইউ) বি.সি.এস (স্বাস্থ্য), সি.এম.ইউ (আল্ট্রাসনোগ্রাফি), এফ.সি.পি.এস (গ্যাস্ট্রোএন্টারোলজি-শেষ পর্ব), এম.ডি (ইন্টারনাল মেডিসিন) ফেইজ-এ",
+                hospital: "চট্টগ্রাম মেডিকেল কলেজ ও হাসপাতাল।",
+                schedule: "শনি, সোম, বুধ ও বৃহস্পতিবার (সন্ধ্যা ৭টা-রাত ৯টা পর্যন্ত)",
+                selectValue: "ডাঃ জাহেদুল আলম তালুকদার (শনি, সোম, বুধ ও বৃহস্পতিবার - সন্ধ্যা ৭টা-রাত ৯টা)"
+            }
+        ];
+
+        // Exact Services List from Brochure with matching icons
+        const servicesData = [
+            { name: "বিশেষজ্ঞ ডাক্তার চেম্বার", icon: "fa-user-doctor" },
+            { name: "ডিজিটাল এক্স-রে", icon: "fa-x-ray" },
+            { name: "ইসিজি (ECG)", icon: "fa-heart-pulse" },
+            { name: "(4D) ডিজিটাল কালার আল্ট্রাসনোগ্রাফী", icon: "fa-wave-square" },
+            { name: "প্যাথলজী", icon: "fa-vials" },
+            { name: "হরমোন এনালাইসিস", icon: "fa-dna" },
+            { name: "ইকোকার্ডিওগ্রাফী", icon: "fa-heart" },
+            { name: "বায়োকেমিস্ট্রি (অটো-এনালাইজার)", icon: "fa-flask" },
+            { name: "মাইক্রো বায়োলজী", icon: "fa-bacterium" },
+            { name: "সেরোলজী", icon: "fa-droplet" },
+            { name: "টিকাদান কেন্দ্র", icon: "fa-syringe" },
+            { name: "বিদেশগামীদের জন্য মেডিকেল চেক-আপ", icon: "fa-plane-departure" },
+            { name: "মাস্টার হেলথ চেক আপ", icon: "fa-notes-medical" },
+            { name: "সাইটো প্যাথলজী", icon: "fa-microscope" }
+        ];
+
+        // Render Doctors Cards
+        const doctorsGrid = document.getElementById('doctors-grid');
+        const noDoctorMsg = document.getElementById('no-doctor-msg');
+        let currentCategory = 'all';
+        let currentSearchQuery = '';
+
+        function renderDoctors() {
+            const filtered = doctorsData.filter(doc => {
+                const matchesCat = currentCategory === 'all' || doc.specialty.includes(currentCategory);
+                const query = currentSearchQuery.trim().toLowerCase();
+                const matchesQuery = !query || 
+                    doc.name.toLowerCase().includes(query) || 
+                    doc.specialty.toLowerCase().includes(query) ||
+                    doc.hospital.toLowerCase().includes(query);
+                return matchesCat && matchesQuery;
+            });
+
+            doctorsGrid.innerHTML = '';
+
+            if (filtered.length === 0) {
+                noDoctorMsg.classList.remove('hidden');
+                return;
+            } else {
+                noDoctorMsg.classList.add('hidden');
+            }
+
+            filtered.forEach(doc => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden group";
+                card.innerHTML = `
+                    <div>
+                        <!-- Specialty Top Banner (Matching Brochure Red Header Accent) -->
+                        <div class="bg-kazi-red text-white px-5 py-3 text-center font-semibold text-sm sm:text-base leading-snug">
+                            ${doc.specialty}
+                        </div>
+
+                        <div class="p-6">
+                            <!-- Doctor Name -->
+                            <div class="flex items-start gap-3 mb-3">
+                                <div class="w-11 h-11 rounded-2xl bg-kazi-lightGreen text-kazi-green flex items-center justify-center shrink-0 mt-0.5 font-bold text-lg border border-kazi-softGreen">
+                                    <i class="fa-solid fa-stethoscope"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl sm:text-2xl font-bold text-kazi-darkGreen group-hover:text-kazi-green transition">
+                                        ${doc.name}
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <!-- Degrees / Qualifications -->
+                            <p class="text-slate-700 text-sm font-medium leading-relaxed mb-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                ${doc.qualifications}
+                            </p>
+
+                            <!-- Hospital Affiliation -->
+                            <div class="flex items-start gap-2 text-sm text-slate-700 mb-4">
+                                <i class="fa-regular fa-hospital text-kazi-green mt-1 shrink-0"></i>
+                                <span class="font-semibold">${doc.hospital}</span>
+                            </div>
+
+                            <!-- Chamber Schedule -->
+                            <div class="bg-kazi-lightGreen/80 border border-kazi-softGreen rounded-2xl p-3.5 text-sm">
+                                <div class="flex items-center gap-1.5 text-kazi-red font-bold mb-1">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span>চেম্বার সময়সূচীঃ</span>
+                                </div>
+                                <p class="text-slate-800 font-semibold leading-snug">${doc.schedule}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Footer Action -->
+                    <div class="px-6 pb-6 pt-1">
+                        <button type="button" onclick="bookDoctor('${doc.selectValue}')" 
+                            class="w-full bg-kazi-green hover:bg-kazi-darkGreen text-white font-bold py-3 px-4 rounded-xl shadow-sm hover:shadow transition flex items-center justify-center gap-2">
+                            <i class="fa-regular fa-calendar-check"></i>
+                            <span>সিরিয়াল নিন</span>
+                        </button>
+                    </div>
+                `;
+                doctorsGrid.appendChild(card);
+            });
+        }
+
+        // Pre-select Doctor and Smooth Scroll to Appointment Form
+        function bookDoctor(selectValue) {
+            const doctorSelect = document.getElementById('doctor-select');
+            doctorSelect.value = selectValue;
+
+            // Reset confirmation view if user was on confirmation screen
+            document.getElementById('booking-confirmation').classList.add('hidden');
+            document.getElementById('booking-form-container').classList.remove('hidden');
+
+            const appointmentSection = document.getElementById('appointment');
+            appointmentSection.scrollIntoView({ behavior: 'smooth' });
+
+            // Focus patient name input after scroll
+            setTimeout(() => {
+                document.getElementById('patient-name').focus();
+            }, 600);
+        }
+
+        // Doctor Search & Category Filter Handlers
+        document.getElementById('doctor-search').addEventListener('input', (e) => {
+            currentSearchQuery = e.target.value;
+            renderDoctors();
+        });
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-kazi-green', 'text-white', 'font-semibold');
+                    b.classList.add('bg-slate-100', 'text-slate-700', 'font-medium');
+                });
+                btn.classList.remove('bg-slate-100', 'text-slate-700', 'font-medium');
+                btn.classList.add('bg-kazi-green', 'text-white', 'font-semibold');
+                
+                currentCategory = btn.getAttribute('data-filter');
+                renderDoctors();
+            });
+        });
+
+        function resetDoctorFilters() {
+            currentCategory = 'all';
+            currentSearchQuery = '';
+            document.getElementById('doctor-search').value = '';
+            document.querySelectorAll('.filter-btn').forEach((b, idx) => {
+                if (idx === 0) {
+                    b.classList.add('bg-kazi-green', 'text-white', 'font-semibold');
+                    b.classList.remove('bg-slate-100', 'text-slate-700', 'font-medium');
+                } else {
+                    b.classList.remove('bg-kazi-green', 'text-white', 'font-semibold');
+                    b.classList.add('bg-slate-100', 'text-slate-700', 'font-medium');
+                }
+            });
+            renderDoctors();
+        }
+
+        // Render Services Grid
+        const servicesGrid = document.getElementById('services-grid');
+        function renderServices(query = '') {
+            const cleanQuery = query.trim().toLowerCase();
+            const filtered = servicesData.filter(s => !cleanQuery || s.name.toLowerCase().includes(cleanQuery));
+
+            servicesGrid.innerHTML = '';
+            filtered.forEach(service => {
+                const item = document.createElement('div');
+                item.className = "bg-white rounded-2xl p-4 sm:p-5 border border-emerald-100 shadow-sm hover:shadow-md hover:border-kazi-green/40 transition flex items-center gap-3.5 group";
+                item.innerHTML = `
+                    <div class="w-11 h-11 rounded-xl bg-kazi-lightGreen text-kazi-green group-hover:bg-kazi-green group-hover:text-white transition flex items-center justify-center shrink-0 text-lg">
+                        <i class="fa-solid ${service.icon}"></i>
+                    </div>
+                    <span class="font-semibold text-slate-800 text-base leading-snug">${service.name}</span>
+                `;
+                servicesGrid.appendChild(item);
+            });
+        }
+
+        document.getElementById('service-search').addEventListener('input', (e) => {
+            renderServices(e.target.value);
+        });
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Set Default Min Date on Appointment Date Picker to Today
+        const dateInput = document.getElementById('appointment-date');
+        const todayStr = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', todayStr);
+        dateInput.value = todayStr;
+
+        // Interactive Appointment Form Submission
+        const appointmentForm = document.getElementById('appointment-form');
+        const errorBox = document.getElementById('form-error-box');
+        const errorText = document.getElementById('form-error-text');
+
+        appointmentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            errorBox.classList.add('hidden');
+
+            const name = document.getElementById('patient-name').value.trim();
+            const phone = document.getElementById('patient-phone').value.trim();
+            const doctor = document.getElementById('doctor-select').value;
+            const date = document.getElementById('appointment-date').value;
+            const notes = document.getElementById('patient-notes').value.trim() || 'উল্লেখ করা হয়নি';
+
+            if (!name || !phone || !doctor || !date) {
+                errorText.textContent = "অনুগ্রহ করে রোগীর নাম, মোবাইল নম্বর, ডাক্তার এবং তারিখ নির্বাচন করুন।";
+                errorBox.classList.remove('hidden');
+                return;
+            }
+
+            // Populate Confirmation Card
+            document.getElementById('conf-name').textContent = name;
+            document.getElementById('conf-phone').textContent = phone;
+            document.getElementById('conf-doctor').textContent = doctor;
+            document.getElementById('conf-date').textContent = date;
+            document.getElementById('conf-notes').textContent = notes;
+
+            // Construct WhatsApp and Email Share Links
+            const messageBody = `আসসালামু আলাইকুম, কাজী ল্যাব-এ সিরিয়াল বুকিং:\nরোগীর নাম: ${name}\nমোবাইল: ${phone}\nডাক্তার: ${doctor}\nতারিখ: ${date}\nবয়স/সমস্যা: ${notes}`;
+            const encodedMsg = encodeURIComponent(messageBody);
+
+            // Bangladesh international format for 01823765665 -> 8801823765665
+            document.getElementById('whatsapp-send-btn').href = `https://wa.me/8801823765665?text=${encodedMsg}`;
+            document.getElementById('email-send-btn').href = `mailto:kazilabdiagnosticcentre@gmail.com?subject=${encodeURIComponent('অনলাইন সিরিয়াল - ' + name)}&body=${encodedMsg}`;
+
+            // Switch Views
+            document.getElementById('booking-form-container').classList.add('hidden');
+            document.getElementById('booking-confirmation').classList.remove('hidden');
+        });
+
+        // Reset Booking Form Button
+        document.getElementById('new-booking-btn').addEventListener('click', () => {
+            appointmentForm.reset();
+            dateInput.value = todayStr;
+            document.getElementById('booking-confirmation').classList.add('hidden');
+            document.getElementById('booking-form-container').classList.remove('hidden');
+        });
+
+        // Initial Render
+        renderDoctors();
+        renderServices();
+    </script>
+</body>
+</html>
